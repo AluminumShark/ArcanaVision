@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Serif+TC:wght@300;400;500&display=swap');
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 390px) {
+  html { font-size: 15px; }
+}
+
+@media (min-width: 430px) {
+  html { font-size: 16px; }
+}
+
+@media (min-width: 768px) {
+  html { font-size: 16px; }
+}
+
+body {
+  font-family: 'Noto Serif TC', 'Cormorant Garamond', serif;
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: 2.0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', 'Noto Serif TC', serif;
+  font-weight: 400;
+  letter-spacing: 4px;
+  line-height: 1.4;
+}
+
+.label-sm {
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.font-en {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.font-zh {
+  font-family: 'Noto Serif TC', serif;
+}

@@ -1,0 +1,30 @@
+:root {
+  /* 基底（淺色春日） */
+  --bg-deep: #f0ebe3;
+  --bg: #f8f4ee;
+  --card-bg: rgba(255, 252, 248, 0.92);
+
+  /* 金色系 */
+  --gold: #b89a3e;
+  --gold-light: #d4bc6a;
+  --gold-dark: #8a7028;
+
+  /* 春日慕夏色調 */
+  --rose: #d4879a;
+  --rose-light: #f0c6d2;
+  --rose-dust: #e8aebe;
+  --sage: #7aab7e;
+  --sage-light: #b5d8b8;
+  --lavender: #a594c4;
+  --lavender-light: #d4cbe8;
+
+  /* 文字 */
+  --text-primary: #3d3028;
+  --text-secondary: #6b5e52;
+  --text-muted: #9a8e82;
+
+  /* 邊框 */
+  --border: rgba(184, 154, 62, 0.2);
+  --border-active: rgba(184, 154, 62, 0.5);
+  --border-rose: rgba(212, 135, 154, 0.3);
+}

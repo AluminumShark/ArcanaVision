@@ -1,0 +1,91 @@
+@import './variables.css';
+@import './typography.css';
+@import './animations.css';
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: var(--bg);
+  min-height: 100dvh;
+  overflow-x: hidden;
+  overscroll-behavior: none;
+  position: relative;
+}
+
+/* 多層春日背景漸層 — 更豐富 */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 15% 15%, rgba(240, 198, 210, 0.15) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 20%, rgba(212, 203, 232, 0.10) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(181, 216, 184, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 85%, rgba(240, 198, 210, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(212, 188, 106, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Vignette overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(240, 235, 227, 0.5) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-active);
+  border-radius: 3px;
+}
+
+/* Selection */
+::selection {
+  background: var(--rose-light);
+  color: var(--text-primary);
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input, textarea {
+  font-family: inherit;
+}
