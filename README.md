@@ -1,3 +1,10 @@
+<h1 align="center">ArcanaVision</h1>
+
+<p align="center">
+  慕夏 Art Nouveau 風格塔羅占卜 Web App<br>
+  <strong>台大 AI 社（NTU AI Club）社團聯展 2026</strong>
+</p>
+
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.12+-3776AB?logo=python&logoColor=white" alt="Python">
   <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React">
@@ -5,13 +12,6 @@
   <img src="https://img.shields.io/badge/Gemini-2.5_Flash-4285F4?logo=google&logoColor=white" alt="Gemini">
   <img src="https://img.shields.io/badge/Vite-6-646CFF?logo=vite&logoColor=white" alt="Vite">
   <img src="https://img.shields.io/github/license/AluminumShark/ArcanaVision" alt="License">
-</p>
-
-<h1 align="center">ArcanaVision</h1>
-
-<p align="center">
-  慕夏 Art Nouveau 風格塔羅占卜 Web App<br>
-  <strong>台大 AI 社（NTU AI Club）社團聯展 2026</strong>
 </p>
 
 ---
