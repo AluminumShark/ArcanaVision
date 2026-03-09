@@ -12,8 +12,7 @@ venv/
 .env.local
 ".env copy.example"
 
-# Generated assets (too large for git)
-src/arcanavision/cards/assets/*.png
+# Generated output
 output/
 
 # Fonts (too large, download separately)
