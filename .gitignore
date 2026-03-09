@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# Environment
+.env
+.env.local
+".env copy.example"
+
+# Generated assets (too large for git)
+src/arcanavision/cards/assets/*.png
+output/
+
+# Fonts (too large, download separately)
+fonts/*.otf
+fonts/*.ttf
+
+# IDE
+.vscode/
+.idea/
+
+# Claude Code
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node (web frontend)
+web/node_modules/
+web/dist/
+
+# Logs
+*.log
+generation_log.json
+
+# Misc
+card_prompts.md
