@@ -28,7 +28,14 @@ def test_list_spreads_returns_all():
     spreads = list_spreads()
     assert len(spreads) == 6
     ids = {s.id for s in spreads}
-    assert ids == {"daily_draw", "three_card", "timeline", "four_elements", "relationship", "celtic_cross"}
+    assert ids == {
+        "daily_draw",
+        "three_card",
+        "timeline",
+        "four_elements",
+        "relationship",
+        "celtic_cross",
+    }
 
 
 def test_assign_positions():

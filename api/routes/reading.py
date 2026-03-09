@@ -35,7 +35,9 @@ async def create_reading(req: ReadingRequest) -> ReadingResponse:
 
     cards = []
     for dc in assigned:
-        keywords = dc.card.reversed_keywords if dc.is_reversed else dc.card.upright_keywords
+        keywords = (
+            dc.card.reversed_keywords if dc.is_reversed else dc.card.upright_keywords
+        )
         cards.append(
             CardResult(
                 id=dc.card.id,

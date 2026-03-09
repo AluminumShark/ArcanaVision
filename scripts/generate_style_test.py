@@ -27,9 +27,28 @@ CARD_STYLE_PREFIX = (
 )
 
 ROMAN = {
-    0: "0", 1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI", 7: "VII",
-    8: "VIII", 9: "IX", 10: "X", 11: "XI", 12: "XII", 13: "XIII", 14: "XIV",
-    15: "XV", 16: "XVI", 17: "XVII", 18: "XVIII", 19: "XIX", 20: "XX", 21: "XXI",
+    0: "0",
+    1: "I",
+    2: "II",
+    3: "III",
+    4: "IV",
+    5: "V",
+    6: "VI",
+    7: "VII",
+    8: "VIII",
+    9: "IX",
+    10: "X",
+    11: "XI",
+    12: "XII",
+    13: "XIII",
+    14: "XIV",
+    15: "XV",
+    16: "XVI",
+    17: "XVII",
+    18: "XVIII",
+    19: "XIX",
+    20: "XX",
+    21: "XXI",
 }
 
 TEST_CARD_IDS = ["major_00", "major_02", "major_13", "wands_01", "cups_10"]
@@ -51,8 +70,8 @@ def _build_prompt(card: dict) -> str:
 
     return (
         CARD_STYLE_PREFIX
-        + f"CRITICAL TEXT INSTRUCTION: You MUST boldly and clearly write the exact text \"{top_text}\" at the TOP center of the card. "
-        + f"CRITICAL TEXT INSTRUCTION: You MUST boldly and clearly write the exact text \"{label}\" at the BOTTOM center of the card in elegant serif typography. "
+        + f'CRITICAL TEXT INSTRUCTION: You MUST boldly and clearly write the exact text "{top_text}" at the TOP center of the card. '
+        + f'CRITICAL TEXT INSTRUCTION: You MUST boldly and clearly write the exact text "{label}" at the BOTTOM center of the card in elegant serif typography. '
         + f"The card depicts: {card['image_prompt_seed']}"
     )
 

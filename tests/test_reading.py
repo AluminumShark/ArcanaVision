@@ -6,7 +6,11 @@ from unittest.mock import MagicMock, patch
 import pytest
 
 from arcanavision.cards.deck import draw_cards, load_deck
-from arcanavision.reading.interpreter import _format_cards, _parse_response, generate_reading
+from arcanavision.reading.interpreter import (
+    _format_cards,
+    _parse_response,
+    generate_reading,
+)
 from arcanavision.reading.models import ReadingResult
 from arcanavision.spreads.engine import assign_positions, load_spread
 
@@ -27,12 +31,14 @@ def test_format_cards():
 
 
 def test_parse_response_valid_json():
-    raw = json.dumps({
-        "story": "這是一個測試故事...",
-        "fortune_quote": "命運在微笑",
-        "scene_prompt": "A dreamy garden scene with golden light",
-        "mood": "hopeful",
-    })
+    raw = json.dumps(
+        {
+            "story": "這是一個測試故事...",
+            "fortune_quote": "命運在微笑",
+            "scene_prompt": "A dreamy garden scene with golden light",
+            "mood": "hopeful",
+        }
+    )
     result = _parse_response(raw)
     assert isinstance(result, ReadingResult)
     assert result.mood == "hopeful"
@@ -49,17 +55,21 @@ async def test_generate_reading_mocked():
     drawn, spread = _make_drawn_cards()
 
     mock_response = MagicMock()
-    mock_response.text = json.dumps({
-        "story": "命運的轉盤正在為你旋轉...",
-        "fortune_quote": "勇氣是穿越黑暗的唯一燈火",
-        "scene_prompt": "A mystical garden bathed in spring light with cherry blossoms falling",
-        "mood": "hopeful",
-    })
+    mock_response.text = json.dumps(
+        {
+            "story": "命運的轉盤正在為你旋轉...",
+            "fortune_quote": "勇氣是穿越黑暗的唯一燈火",
+            "scene_prompt": "A mystical garden bathed in spring light with cherry blossoms falling",
+            "mood": "hopeful",
+        }
+    )
 
     mock_client = MagicMock()
     mock_client.models.generate_content.return_value = mock_response
 
-    with patch("arcanavision.reading.interpreter.genai.Client", return_value=mock_client):
+    with patch(
+        "arcanavision.reading.interpreter.genai.Client", return_value=mock_client
+    ):
         result = await generate_reading(drawn, spread, "我的未來會怎樣？")
 
     assert isinstance(result, ReadingResult)

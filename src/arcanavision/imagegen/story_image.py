@@ -44,7 +44,11 @@ def generate_story_image(scene_prompt: str, mood: str) -> Image.Image | None:
                 response_modalities=["IMAGE", "TEXT"],
             ),
         )
-        for part in response.candidates[0].content.parts:
+        content = response.candidates[0].content
+        if content is None or content.parts is None:
+            logger.error("故事圖生成無內容回傳")
+            return None
+        for part in content.parts:
             if part.inline_data is not None:
                 raw = part.inline_data.data
                 image_bytes = raw if isinstance(raw, bytes) else base64.b64decode(raw)

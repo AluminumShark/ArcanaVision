@@ -36,8 +36,17 @@ def main() -> None:
     # 1. FastAPI 後端
     print(f"  [Backend]  啟動 FastAPI on http://0.0.0.0:{API_PORT}")
     api_proc = subprocess.Popen(
-        [sys.executable, "-m", "uvicorn", "api.main:app",
-         "--host", "0.0.0.0", "--port", str(API_PORT), "--reload"],
+        [
+            sys.executable,
+            "-m",
+            "uvicorn",
+            "api.main:app",
+            "--host",
+            "0.0.0.0",
+            "--port",
+            str(API_PORT),
+            "--reload",
+        ],
         cwd=os.path.dirname(__file__) or ".",
     )
     procs.append(api_proc)
@@ -55,7 +64,7 @@ def main() -> None:
 
     print()
     print("  ─────────────────────────────────────────")
-    print(f"  前端：http://localhost:5173")
+    print("  前端：http://localhost:5173")
     print(f"  後端：http://localhost:{API_PORT}")
     print(f"  API：http://localhost:{API_PORT}/api/spreads")
     print("  ─────────────────────────────────────────")

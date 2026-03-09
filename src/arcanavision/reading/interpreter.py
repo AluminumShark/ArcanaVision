@@ -24,7 +24,9 @@ def _format_cards(drawn_cards: list[DrawnCard]) -> str:
     lines: list[str] = []
     for dc in drawn_cards:
         orientation = "逆位" if dc.is_reversed else "正位"
-        keywords = dc.card.reversed_keywords if dc.is_reversed else dc.card.upright_keywords
+        keywords = (
+            dc.card.reversed_keywords if dc.is_reversed else dc.card.upright_keywords
+        )
         keywords_str = "、".join(keywords)
         lines.append(f"位置「{dc.position_name}」→ {dc.card.name_zh}（{orientation}）")
         lines.append(f"  關鍵字：{keywords_str}")
@@ -67,7 +69,7 @@ async def generate_reading(
                     response_mime_type="application/json",
                 ),
             )
-            return _parse_response(response.text)
+            return _parse_response(response.text or "")
         except (json.JSONDecodeError, KeyError, TypeError) as e:
             logger.warning(f"解讀解析失敗（第 {attempt + 1} 次）：{e}")
             if attempt == 1:

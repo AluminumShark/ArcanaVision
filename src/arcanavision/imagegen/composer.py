@@ -137,7 +137,11 @@ def compose_final_image(
     y = _draw_centered_text(draw, y, "ArcanaVision", font_title, ACCENT_COLOR)
     y += 10
     # 問題
-    question_display = f"「{user_question}」" if len(user_question) <= 20 else f"「{user_question[:20]}...」"
+    question_display = (
+        f"「{user_question}」"
+        if len(user_question) <= 20
+        else f"「{user_question[:20]}...」"
+    )
     y = _draw_centered_text(draw, y, question_display, font_subtitle, MUTED_COLOR)
     y += 15
     y = _draw_separator(draw, y)
@@ -152,10 +156,6 @@ def compose_final_image(
         y += story_display_w + 20
 
     # 牌卡區
-    cards_per_row = min(card_count, 5)
-    total_cards_width = cards_per_row * CARD_THUMB_W + (cards_per_row - 1) * CARD_GAP
-    start_x = (CANVAS_WIDTH - total_cards_width) // 2
-
     for i, dc in enumerate(drawn_cards):
         row = i // 5
         col = i % 5
@@ -208,12 +208,16 @@ def compose_final_image(
     y = _draw_separator(draw, y)
 
     # 故事文字
-    y = _draw_wrapped_text(draw, y, reading.story, font_body, TEXT_COLOR, CANVAS_WIDTH - PADDING * 2)
+    y = _draw_wrapped_text(
+        draw, y, reading.story, font_body, TEXT_COLOR, CANVAS_WIDTH - PADDING * 2
+    )
     y += 10
     y = _draw_separator(draw, y)
 
     # 命運箴言
-    y = _draw_centered_text(draw, y, f"「{reading.fortune_quote}」", font_quote, ACCENT_COLOR)
+    y = _draw_centered_text(
+        draw, y, f"「{reading.fortune_quote}」", font_quote, ACCENT_COLOR
+    )
     y += 15
     y = _draw_separator(draw, y)
 

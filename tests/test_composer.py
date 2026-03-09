@@ -11,8 +11,8 @@ from arcanavision.spreads.engine import assign_positions, load_spread
 def _make_reading_result() -> ReadingResult:
     return ReadingResult(
         story="命運的轉盤正在為你旋轉。你站在人生的十字路口，過去的經歷像一面鏡子，映照出你內心深處的渴望。"
-              "現在的你正處於一個關鍵的轉折點，舊有的模式正在瓦解，新的可能性正在萌芽。"
-              "不要害怕改變，因為每一次蛻變都是成長的機會。星星在你的未來閃耀，指引你走向更光明的道路。",
+        "現在的你正處於一個關鍵的轉折點，舊有的模式正在瓦解，新的可能性正在萌芽。"
+        "不要害怕改變，因為每一次蛻變都是成長的機會。星星在你的未來閃耀，指引你走向更光明的道路。",
         fortune_quote="勇氣不是沒有恐懼，而是帶著恐懼仍然前行",
         scene_prompt="A figure standing at a crossroads in a magical spring garden",
         mood="hopeful",
@@ -43,7 +43,9 @@ def test_compose_with_story_image():
     # 模擬故事圖
     story_img = Image.new("RGB", (1024, 1024), (200, 180, 160))
 
-    result = compose_final_image(assigned, reading, "我的職涯發展？", story_image=story_img)
+    result = compose_final_image(
+        assigned, reading, "我的職涯發展？", story_image=story_img
+    )
 
     assert isinstance(result, Image.Image)
     assert result.size[0] == 1200

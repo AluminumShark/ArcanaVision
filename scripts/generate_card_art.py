@@ -38,9 +38,28 @@ CARD_STYLE_PREFIX = (
 )
 
 ROMAN = {
-    0: "0", 1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI", 7: "VII",
-    8: "VIII", 9: "IX", 10: "X", 11: "XI", 12: "XII", 13: "XIII", 14: "XIV",
-    15: "XV", 16: "XVI", 17: "XVII", 18: "XVIII", 19: "XIX", 20: "XX", 21: "XXI",
+    0: "0",
+    1: "I",
+    2: "II",
+    3: "III",
+    4: "IV",
+    5: "V",
+    6: "VI",
+    7: "VII",
+    8: "VIII",
+    9: "IX",
+    10: "X",
+    11: "XI",
+    12: "XII",
+    13: "XIII",
+    14: "XIV",
+    15: "XV",
+    16: "XVI",
+    17: "XVII",
+    18: "XVIII",
+    19: "XIX",
+    20: "XX",
+    21: "XXI",
 }
 
 ASSETS_DIR = Path("src/arcanavision/cards/assets")
@@ -83,9 +102,9 @@ def _build_prompt(card: dict) -> str:
 
     return (
         CARD_STYLE_PREFIX
-        + f"TEXT LAYOUT — Display the Roman numeral \"{num_text}\" at the TOP center "
+        + f'TEXT LAYOUT — Display the Roman numeral "{num_text}" at the TOP center '
         + "of the card in dark elegant serif typography. "
-        + f"At the BOTTOM center, display \"{label}\" inside a simple clean "
+        + f'At the BOTTOM center, display "{label}" inside a simple clean '
         + "rectangular text banner with serif uppercase typography. "
         + "The text banner style must be identical and consistent across all cards. "
         + f"SCENE — The card depicts: {card['image_prompt_seed']}"
@@ -103,7 +122,10 @@ def _generate_image(client: genai.Client, prompt: str) -> bytes | None:
     )
     if not response.candidates:
         return None
-    for part in response.candidates[0].content.parts:
+    content = response.candidates[0].content
+    if content is None or content.parts is None:
+        return None
+    for part in content.parts:
         if part.inline_data is not None:
             return part.inline_data.data
     return None
@@ -134,7 +156,7 @@ def main() -> None:
 
         output_path = ASSETS_DIR / f"{card_id}.png"
         prompt = _build_prompt(card)
-        logger.info(f"[{i+1}/{len(cards)}] 生成中：{card_id} ({card['name_en']})...")
+        logger.info(f"[{i + 1}/{len(cards)}] 生成中：{card_id} ({card['name_en']})...")
 
         try:
             img_bytes = _generate_image(client, prompt)
@@ -150,7 +172,7 @@ def main() -> None:
         except Exception as e:
             error_str = str(e)
             if "429" in error_str or "RESOURCE_EXHAUSTED" in error_str:
-                logger.warning(f"  達到速率限制，等待 60 秒後重試...")
+                logger.warning("  達到速率限制，等待 60 秒後重試...")
                 time.sleep(60)
                 try:
                     img_bytes = _generate_image(client, prompt)

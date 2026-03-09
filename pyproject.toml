@@ -32,3 +32,9 @@ packages = ["src/arcanavision"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.5",
+    "ty>=0.0.21",
+]
