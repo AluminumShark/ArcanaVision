@@ -1,0 +1,20 @@
+name_en: "Relationship Cross"
+name_zh: "愛情十字"
+card_count: 5
+description: "專為感情問題設計，分析雙方狀態與關係走向"
+positions:
+  - index: 0
+    name: "你的狀態"
+    description: "你在這段關係中的狀態與感受"
+  - index: 1
+    name: "對方的狀態"
+    description: "對方在這段關係中的狀態與感受"
+  - index: 2
+    name: "關係核心"
+    description: "你們之間的核心連結或問題"
+  - index: 3
+    name: "挑戰"
+    description: "關係中需要面對的挑戰"
+  - index: 4
+    name: "發展方向"
+    description: "關係的未來走向"

@@ -1,0 +1,35 @@
+name_en: "Celtic Cross"
+name_zh: "凱爾特十字"
+card_count: 10
+description: "最經典的深度牌陣，適合需要全面分析的複雜問題"
+positions:
+  - index: 0
+    name: "現況"
+    description: "目前的處境與核心問題"
+  - index: 1
+    name: "阻礙"
+    description: "面臨的挑戰或交叉影響"
+  - index: 2
+    name: "意識層面"
+    description: "你意識到的目標或理想"
+  - index: 3
+    name: "潛意識"
+    description: "潛藏在深處的動機或恐懼"
+  - index: 4
+    name: "過去"
+    description: "過去的經歷如何影響現在"
+  - index: 5
+    name: "近未來"
+    description: "即將發生的事或影響"
+  - index: 6
+    name: "自我認知"
+    description: "你如何看待自己在這個處境中的角色"
+  - index: 7
+    name: "外在環境"
+    description: "周圍的人與環境如何影響你"
+  - index: 8
+    name: "希望與恐懼"
+    description: "你最深的希望或恐懼"
+  - index: 9
+    name: "最終結果"
+    description: "事情的最終結局"

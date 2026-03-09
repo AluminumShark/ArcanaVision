@@ -1,0 +1,20 @@
+name_en: "Timeline Spread"
+name_zh: "時間之流"
+card_count: 5
+description: "五張牌呈現事件的完整發展脈絡，從起源到最終結果"
+positions:
+  - index: 0
+    name: "遠因"
+    description: "事件的深層根源"
+  - index: 1
+    name: "近因"
+    description: "近期直接觸發的因素"
+  - index: 2
+    name: "現況"
+    description: "當前的核心狀態"
+  - index: 3
+    name: "近期發展"
+    description: "短期內可能的變化"
+  - index: 4
+    name: "最終結果"
+    description: "事情的最終走向"

@@ -1,0 +1,14 @@
+name_en: "Three Card Spread"
+name_zh: "聖三角"
+card_count: 3
+description: "經典的過去/現在/未來三牌陣，簡潔有力地呈現事態發展"
+positions:
+  - index: 0
+    name: "過去"
+    description: "過去的影響與根源"
+  - index: 1
+    name: "現在"
+    description: "目前的處境與挑戰"
+  - index: 2
+    name: "未來"
+    description: "事情的發展趨勢"

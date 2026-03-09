@@ -1,0 +1,8 @@
+name_en: "Daily Draw"
+name_zh: "每日一牌"
+card_count: 1
+description: "簡單日常指引，一張牌揭示今日的能量與建議"
+positions:
+  - index: 0
+    name: "今日指引"
+    description: "今天的能量主題與建議方向"
